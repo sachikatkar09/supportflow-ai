@@ -1,5 +1,10 @@
+import Sidebar from "./components/Sidebar";
+
+
 export default function Home() {
   return (
+    <div className="flex min-h-screen bg-slate-50">
+    <Sidebar />
     <main className="min-h-screen p-8">
       <header className="mb-10">
         <p className="text-sm font-semibold text-blue-600">SUPPORTFLOW AI</p>
@@ -74,5 +79,6 @@ export default function Home() {
         </div>
       </section>
     </main>
+    </div>
   );
 }
