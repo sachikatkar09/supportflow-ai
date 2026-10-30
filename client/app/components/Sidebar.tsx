@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const navigationItems = [
   { name: "Dashboard", icon: "▦" },
   { name: "Tickets", icon: "🎫" },
@@ -21,8 +23,13 @@ export default function Sidebar() {
 
       <nav className="flex flex-col gap-2">
         {navigationItems.map((item, index) => (
-          <div
+          <Link
             key={item.name}
+            href={
+              item.name === "Dashboard"
+                ? "/"
+                : `/${item.name.toLowerCase().replace(" ", "-")}`
+            }
             className={`flex items-center gap-3 rounded-lg px-4 py-3 text-sm font-medium ${
               index === 0
                 ? "bg-blue-50 text-blue-700"
@@ -31,7 +38,7 @@ export default function Sidebar() {
           >
             <span>{item.icon}</span>
             <span>{item.name}</span>
-          </div>
+          </Link>
         ))}
       </nav>
 
