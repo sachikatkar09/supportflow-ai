@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const navigationItems = [
   { name: "Dashboard", icon: "▦" },
@@ -10,6 +13,8 @@ const navigationItems = [
 ];
 
 export default function Sidebar() {
+  const pathname = usePathname();
+
   return (
     <aside className="flex min-h-screen w-64 flex-col border-r border-gray-200 bg-white p-5">
       <div className="mb-10">
@@ -31,7 +36,10 @@ export default function Sidebar() {
                 : `/${item.name.toLowerCase().replace(" ", "-")}`
             }
             className={`flex items-center gap-3 rounded-lg px-4 py-3 text-sm font-medium ${
-              index === 0
+              pathname ===
+              (item.name === "Dashboard"
+                ? "/"
+                : `/${item.name.toLowerCase().replace(" ", "-")}`)
                 ? "bg-blue-50 text-blue-700"
                 : "text-gray-600 hover:bg-gray-50"
             }`}
