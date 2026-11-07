@@ -1,4 +1,5 @@
 import Sidebar from "../components/Sidebar";
+import Link from "next/link";
 
 export default function TicketsPage() {
   return (
@@ -11,6 +12,13 @@ export default function TicketsPage() {
           <p className="mt-2 text-sm text-slate-500">
             Manage and track all customer support tickets.
           </p>
+
+          <Link
+            href="/tickets/new"
+            className="rounded-lg bg-blue-600 px-5 py-3 text-sm font-medium text-white hover:bg-blue-700"
+          >
+            + Create Ticket
+          </Link>
         </div>
 
         <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
