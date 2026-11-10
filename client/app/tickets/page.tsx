@@ -7,11 +7,13 @@ export default function TicketsPage() {
       <Sidebar />
 
       <main className="min-w-0 flex-1 p-8">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-slate-900">Tickets</h1>
-          <p className="mt-2 text-sm text-slate-500">
-            Manage and track all customer support tickets.
-          </p>
+        <div className="mb-8 flex items-center justify-between">
+          <div>
+            <h1 className="text-3xl font-bold text-slate-900">Tickets</h1>
+            <p className="mt-2 text-sm text-slate-500">
+              Manage and track all customer support tickets.
+            </p>
+          </div>
 
           <Link
             href="/tickets/new"
@@ -33,6 +35,7 @@ export default function TicketsPage() {
                   <th className="px-4 py-3 font-medium">Subject</th>
                   <th className="px-4 py-3 font-medium">Priority</th>
                   <th className="px-4 py-3 font-medium">Status</th>
+                  <th className="px-4 py-3 font-medium">Action</th>
                 </tr>
               </thead>
 
@@ -45,7 +48,16 @@ export default function TicketsPage() {
                   <td className="px-4 py-4">Unable to log in</td>
                   <td className="px-4 py-4 text-red-600">High</td>
                   <td className="px-4 py-4">Open</td>
+                  <td className="px-4 py-4">
+                    <Link
+                      href="/tickets/SF-101"
+                      className="font-medium text-blue-600 hover:underline"
+                    >
+                      View Details
+                    </Link>
+                  </td>
                 </tr>
+
                 <tr>
                   <td className="px-4 py-4 font-medium text-blue-600">
                     SF-102
@@ -54,7 +66,16 @@ export default function TicketsPage() {
                   <td className="px-4 py-4">Payment issue</td>
                   <td className="px-4 py-4 text-amber-600">Medium</td>
                   <td className="px-4 py-4">In Progress</td>
+                  <td className="px-4 py-4">
+                    <Link
+                      href="/tickets/SF-102"
+                      className="font-medium text-blue-600 hover:underline"
+                    >
+                      View Details
+                    </Link>
+                  </td>
                 </tr>
+
                 <tr>
                   <td className="px-4 py-4 font-medium text-blue-600">
                     SF-103
@@ -63,6 +84,14 @@ export default function TicketsPage() {
                   <td className="px-4 py-4">Order status request</td>
                   <td className="px-4 py-4 text-green-600">Low</td>
                   <td className="px-4 py-4">Resolved</td>
+                  <td className="px-4 py-4">
+                    <Link
+                      href="/tickets/SF-103"
+                      className="font-medium text-blue-600 hover:underline"
+                    >
+                      View Details
+                    </Link>
+                  </td>
                 </tr>
               </tbody>
             </table>
