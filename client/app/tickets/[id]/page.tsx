@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import Sidebar from "../../components/Sidebar";
 import Link from "next/link";
+
 const tickets = [
   {
     id: "SF-101",
@@ -43,7 +44,15 @@ async function TicketDetailsContent({
   if (!ticket) {
     return (
       <main className="flex-1 p-8">
+        <Link
+          href="/tickets"
+          className="mb-6 inline-block text-sm font-medium text-blue-600 hover:underline"
+        >
+          ← Back to Tickets
+        </Link>
+
         <h1 className="text-2xl font-bold text-slate-900">Ticket Not Found</h1>
+
         <p className="mt-2 text-slate-500">No ticket found with ID: {id}</p>
       </main>
     );
@@ -51,6 +60,13 @@ async function TicketDetailsContent({
 
   return (
     <main className="flex-1 p-8">
+      <Link
+        href="/tickets"
+        className="mb-6 inline-block text-sm font-medium text-blue-600 hover:underline"
+      >
+        ← Back to Tickets
+      </Link>
+
       <h1 className="text-3xl font-bold text-slate-900">Ticket Details</h1>
 
       <p className="mt-2 text-sm text-slate-500">Ticket ID: {ticket.id}</p>
@@ -111,12 +127,6 @@ export default function TicketDetailsPage({
       <Suspense
         fallback={<main className="flex-1 p-8">Loading ticket details...</main>}
       >
-        <Link
-          href="/tickets"
-          className="mb-6 inline-block text-sm font-medium text-blue-600 hover:underline"
-        >
-          ← Back to Tickets
-        </Link>
         <TicketDetailsContent params={params} />
       </Suspense>
     </div>
