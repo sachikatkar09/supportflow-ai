@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import Sidebar from "../../components/Sidebar";
-
+import Link from "next/link";
 const tickets = [
   {
     id: "SF-101",
@@ -111,6 +111,12 @@ export default function TicketDetailsPage({
       <Suspense
         fallback={<main className="flex-1 p-8">Loading ticket details...</main>}
       >
+        <Link
+          href="/tickets"
+          className="mb-6 inline-block text-sm font-medium text-blue-600 hover:underline"
+        >
+          ← Back to Tickets
+        </Link>
         <TicketDetailsContent params={params} />
       </Suspense>
     </div>
