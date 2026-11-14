@@ -66,7 +66,21 @@ async function TicketDetailsContent({
       >
         ← Back to Tickets
       </Link>
+      <div className="mb-6 flex items-center justify-between">
+        <Link
+          href="/tickets"
+          className="text-sm font-medium text-blue-600 hover:underline"
+        >
+          ← Back to Tickets
+        </Link>
 
+        <Link
+          href={`/tickets/${id}/edit`}
+          className="rounded-lg bg-blue-600 px-5 py-3 text-sm font-medium text-white hover:bg-blue-700"
+        >
+          Edit Ticket
+        </Link>
+      </div>
       <h1 className="text-3xl font-bold text-slate-900">Ticket Details</h1>
 
       <p className="mt-2 text-sm text-slate-500">Ticket ID: {ticket.id}</p>
